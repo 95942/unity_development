@@ -19,10 +19,17 @@ public class asteroid_scr : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(randomDirection * randomSpeed);
+        
     }
      void OnCollisionEnter2D(Collision2D collision)
     {
+      
+ Instantiate(rb);
+ Instantiate(rb);
+ Destroy(gameObject);
         transform.localScale = new Vector3(minSize,minSize);
+   Vector2 randomDirection = Random.insideUnitCircle;
+
     }
 }
 
