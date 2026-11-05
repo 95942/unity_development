@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class bullet_scr : MonoBehaviour
 {
+
     public float backwardthrustforce =-50f;
     public float bullet_speed = 50f;
     public float thrustForce = 1f;
@@ -16,9 +18,6 @@ public class bullet_scr : MonoBehaviour
 
     void Update()
     {
-     
-
-       
             // Calculate mouse direction
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
             Vector2 direction = (mousePos - transform.position).normalized;
@@ -32,11 +31,11 @@ public class bullet_scr : MonoBehaviour
         }
      if (Mouse.current.rightButton.isPressed)
         {
+            Instantiate(rb);
+
     rb.AddForce(direction * bullet_speed);
         }
-       
-    }
-
+     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
