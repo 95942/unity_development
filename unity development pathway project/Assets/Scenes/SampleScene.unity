@@ -948,7 +948,6 @@ GameObject:
   - component: {fileID: 865734763}
   - component: {fileID: 865734765}
   - component: {fileID: 865734767}
-  - component: {fileID: 865734768}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -1073,21 +1072,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &865734768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865734762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a22e2af8e5a11648982176be4452f48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::score_scr
-  score: 0
-  rb: {fileID: 0}
-  uiDocument: {fileID: 381017607}
 --- !u!1001 &1067063464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1156,7 +1140,6 @@ GameObject:
   - component: {fileID: 1155380764}
   - component: {fileID: 1155380763}
   - component: {fileID: 1155380765}
-  - component: {fileID: 1155380766}
   m_Layer: 0
   m_Name: border_bottom
   m_TagString: Untagged
@@ -1285,21 +1268,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1155380766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155380762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a22e2af8e5a11648982176be4452f48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::score_scr
-  score: 0
-  rb: {fileID: 0}
-  uiDocument: {fileID: 0}
 --- !u!1001 &1658610071
 PrefabInstance:
   m_ObjectHideFlags: 0

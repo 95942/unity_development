@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class bullet_scr : MonoBehaviour
 {
-
+private float instanceamount = 0f;
     public float backwardthrustforce =-50f;
     public float bullet_speed = 50f;
     public float thrustForce = 1f;
@@ -31,13 +30,13 @@ public class bullet_scr : MonoBehaviour
         }
      if (Mouse.current.rightButton.isPressed)
         {
-            Instantiate(rb);
-
+        Instantiate(gameObject);
     rb.AddForce(direction * bullet_speed);
         }
      }
     void OnCollisionEnter2D(Collision2D collision)
     {
+    
         Destroy(gameObject);
     }
 }
