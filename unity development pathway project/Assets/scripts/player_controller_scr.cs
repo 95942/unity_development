@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
             Vector2 direction = (mousePos - transform.position).normalized;
 
+
             // Move player in direction of mouse
             transform.up = direction;
             rb.AddForce(direction * thrustForce);
