@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class bullet_scr : MonoBehaviour
 {
-    private float followingmouse = 1f;
+    public bool followingmouse = true;
     private float allowedtofire = 1f;
 private float instanceamount = 0f;
     public float backwardthrustforce =-50f;
@@ -24,23 +24,25 @@ private float instanceamount = 0f;
     {
        
             // Calculate mouse direction
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
-            Vector2 direction = (mousePos - transform.position).normalized;
 
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
+        
+            Vector2 direction = (mousePos - transform.position).normalized;
+          
             // Move player in direction of mouse
             transform.up = direction;
    
             rb.AddForce(direction * thrustForce);
-            
+          
     
-  if(followingmouse == 0f){
+  if(followingmouse == false){
     rb.AddForce(direction * bullet_speed);
             }
             
             
     if (Mouse.current.leftButton.isPressed)
         {
-            if(followingmouse == 1f){
+            if(followingmouse == true){
     rb.AddForce(direction * backwardthrustforce);
             }
             
@@ -48,7 +50,7 @@ private float instanceamount = 0f;
         }
      if (Mouse.current.rightButton.isPressed)
         {
-        followingmouse = 0f;
+        followingmouse = false;
    
     
                bulletdeath = true;
@@ -59,10 +61,12 @@ private float instanceamount = 0f;
     void OnCollisionEnter2D(Collision2D collision)
     {
 if(bulletdeath == true){
-        Destroy(gameObject);
+    if(gameObject.tag == "asteroid"){
+        Destroy(gameObject, 5f);
         bulletdeath = false;
-        followingmouse = 1f;
+        followingmouse = false;
       instanceamount = 0f;
 }
+    }
     }
 }
