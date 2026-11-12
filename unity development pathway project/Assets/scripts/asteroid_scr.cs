@@ -24,7 +24,7 @@ public class asteroid_scr : MonoBehaviour
      void OnCollisionEnter2D(Collision2D collision)
     {
 
- Instantiate(rb);
+ Instantiate(gameObject);
  Destroy(gameObject);
         transform.localScale = new Vector3(minSize,minSize);
    Vector2 randomDirection = Random.insideUnitCircle;

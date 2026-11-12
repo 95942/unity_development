@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     public float backwardthrustforce =-50f;
     public float thrustForce = 1f;
+    public bool bulletdestory =false;
+    
     Rigidbody2D rb;
 
     void Start()
@@ -31,6 +33,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(bulletdestory == true){
+            
         Destroy(gameObject);
+        }
     }
 }

@@ -31,7 +31,6 @@ public class scoring : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
        score = Mathf.FloorToInt(elapsedTime * scoreMultiplier);
          scoreText.text = "Score: " + score + 1;
     }
