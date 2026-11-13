@@ -1,6 +1,9 @@
 using UnityEngine;
 public class asteroid_scr : MonoBehaviour
 {
+    public float amountofenemies =4f;
+      public bool scorableobject = true;
+    public bool enemy = true;
        public float minSize = 0.5f;
     public float maxSize = 2.0f;
     public float minSpeed = 50f;
@@ -23,11 +26,12 @@ public class asteroid_scr : MonoBehaviour
      void OnCollisionEnter2D(Collision2D collision)
     {
 Vector2 randomDirection = Random.insideUnitCircle;
-
- Instantiate(gameObject);
+if(amountofenemies < 25){
+    amountofenemies ++;
+Instantiate(gameObject);
  Destroy(gameObject);
         transform.localScale = new Vector3(minSize, minSize);
-  
+}
 }
 }
 

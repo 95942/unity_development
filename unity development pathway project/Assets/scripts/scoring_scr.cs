@@ -30,9 +30,13 @@ public class scoring : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        asteroid_scr scorableobject = collision.gameObject.GetComponent<asteroid_scr>();
+       if(scorableobject != null )
+  {
         scorepoints ++;
        score = Mathf.FloorToInt(scorepoints);
          scoreText.text = "Score: " + score ++;
+  }
     }
 
 }

@@ -4,12 +4,11 @@ using UnityEngine.InputSystem;
 
 public class bullet_scr : MonoBehaviour
 {
+    public bool enemy = false;
     public bool followingmouse = true;
-    private float allowedtofire = 1f;
     public float backwardthrustforce =-50f;
     public float bullet_speed = 50f;
     public float thrustForce = 1f;
-    private bool bulletdeath = false;
     public bool bulletdestory = false;
     Rigidbody2D rb;
 
@@ -45,7 +44,6 @@ public class bullet_scr : MonoBehaviour
   
         rb.AddForce(direction * bullet_speed);
                   followingmouse = false;
-                    Debug.Log("test");
        bulletdestory = true;
         }
      
@@ -53,10 +51,6 @@ public class bullet_scr : MonoBehaviour
 }
  void OnCollisionEnter2D(Collision2D collision)
     {
-
-    
-
-   Debug.Log("test2");
       
         followingmouse = true;
 }
