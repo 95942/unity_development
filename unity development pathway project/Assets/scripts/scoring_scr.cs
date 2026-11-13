@@ -4,10 +4,9 @@ using UnityEngine.UIElements;
 
 public class scoring : MonoBehaviour
 {
-    private float elapsedTime = 0f;
     private float score = 0f;
-    
-    public float scoreMultiplier = 10f;
+    private float scorepoints = 0f;
+
     public float thrustForce = 1f;
     
 
@@ -23,7 +22,7 @@ public class scoring : MonoBehaviour
 
     void Update()
     {
-        
+        score = scorepoints;
         
         
         
@@ -31,8 +30,9 @@ public class scoring : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       score = Mathf.FloorToInt(elapsedTime * scoreMultiplier);
-         scoreText.text = "Score: " + score + 1;
+        scorepoints ++;
+       score = Mathf.FloorToInt(scorepoints);
+         scoreText.text = "Score: " + score ++;
     }
 
 }

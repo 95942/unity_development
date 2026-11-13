@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class asteroid_scr : MonoBehaviour
 {
        public float minSize = 0.5f;
@@ -23,12 +22,12 @@ public class asteroid_scr : MonoBehaviour
     }
      void OnCollisionEnter2D(Collision2D collision)
     {
+Vector2 randomDirection = Random.insideUnitCircle;
 
  Instantiate(gameObject);
  Destroy(gameObject);
-        transform.localScale = new Vector3(minSize,minSize);
-   Vector2 randomDirection = Random.insideUnitCircle;
-
-    }
+        transform.localScale = new Vector3(minSize, minSize);
+  
+}
 }
 

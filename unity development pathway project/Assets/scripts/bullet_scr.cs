@@ -36,14 +36,7 @@ public class bullet_scr : MonoBehaviour
             }
             
             
-    if (Mouse.current.leftButton.isPressed)
-        {
-            if(followingmouse == true){
-    rb.AddForce(direction * backwardthrustforce);
-            }
-            
-
-        }
+  
      if (Mouse.current.rightButton.isPressed)
         {
 
