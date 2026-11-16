@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class PlayerController : MonoBehaviour
 {
     public GameObject explosionEffect;
     public bool scorableobject = false;
     public float backwardthrustforce =-50f;
     public float thrustForce = 1f;
+    public bool alive = true;
 
     
     Rigidbody2D rb;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       
+    
             // Calculate mouse direction
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
             Vector2 direction = (mousePos - transform.position).normalized;
@@ -29,8 +29,15 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(direction * thrustForce);
      if (Mouse.current.leftButton.isPressed)
         {
+            if(alive == false){
+             Application.LoadLevel(0);
+            }
+            if(alive == true){
     rb.AddForce(direction * backwardthrustforce);
+            } 
+            
         }
+       
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -39,7 +46,12 @@ public class PlayerController : MonoBehaviour
   if(enemy != null)
   {
             Instantiate(explosionEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+            alive = false;
+    //Destroy(gameObject);
+    GameObject.Find ("Triangle").transform.localScale = new Vector3(0, 0, 0);
+     
+
   }
     }
+  
 }

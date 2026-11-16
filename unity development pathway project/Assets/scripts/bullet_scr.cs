@@ -21,7 +21,7 @@ public class bullet_scr : MonoBehaviour
 
     void Update()
     {
-       
+  
             // Calculate mouse direction
 
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
